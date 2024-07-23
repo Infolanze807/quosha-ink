@@ -8,7 +8,7 @@ import sei from "../images/IMG_7550.PNG";
 const Banner = () => {
   return (
     <div className="bg-img">
-      <div className="lg:p-20 md:p-20 p-10 bg-black bg-opacity-60">
+      <div className="lg:p-20 md:p-20 p-10 py-20 bg-black bg-opacity-60">
         <div className="relative">
           <img className="hidden lg:block md:block" src={img} alt="quosha" />
           <img className="lg:hidden md:hidden" src={img2} alt="quosha" />
