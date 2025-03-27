@@ -1,0 +1,17 @@
+export { default as Cart } from './Cart';
+export { default as Catalog } from './Catalog';
+export { default as Home } from './Home';
+export { default as Login } from './Login';
+export { default as Product } from './Product';
+export { default as ForgotPage } from "./Forgot";
+export { default as ResetPage } from "./Reset Password";
+export { default as OrderPage } from "./Order";
+export { default as VerifyPage } from "./Email Verify";
+export { default as SingleOrder } from "./Order/SingleOrder";
+export { default as OrderSuccess } from "./Order/SuccessOrder";
+export { default as PayPalSuccess} from "./Payment/index";
+export { default as NftAirdrop } from "./NftAirDrops/NftAirdrops";
+export { default as AboutUs} from "./About";
+export { default as Privacy } from "./Privacy";
+export { default as Terms} from "./Terms";
+export { default as Contact} from "./Contact";

@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-    margin: 0;
+
+
+/* main #f3f3f3 */
+/* footer #d9d9d9 */
+:root{
+    --main-color: #f3f3f3;
+    --second-color: #d9d9d9;
+    --three-color: #000000;
+    --four-color: #0e1b28;
+    --title-color: #183a49;
 }
