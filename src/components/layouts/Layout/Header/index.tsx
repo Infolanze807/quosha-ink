@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ handleShow }) => {
             {/* Close Button */}
             <button
               onClick={() => setShowSlider(false)}
-              className="absolute top-2 right-6 z-20 text-black bg-transparent hover:text-red-500 hover:bg-transparent"
+              className="absolute top-0 md:top-2 right-0 md:right-6 z-20 text-black bg-transparent hover:text-red-500 hover:bg-transparent"
             >
               ✖
             </button>
@@ -150,7 +150,7 @@ const Header: React.FC<HeaderProps> = ({ handleShow }) => {
           </div>
 
           {/* Spacer to push Nav down when sticky */}
-          {isSticky && <div className="h-[53px]" />}
+          {isSticky && <div className="h-[70px] md:h-[53px]" />}
         </>
       )}
 
