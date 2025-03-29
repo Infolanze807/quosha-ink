@@ -13,10 +13,6 @@ import { FaRegHeart } from "react-icons/fa6";
 import { TbLogout } from "react-icons/tb";
 import { FaHandHoldingDroplet } from "react-icons/fa6";
 import img1 from "../../../../../images/QuoshaLogo_Black.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay  } from "swiper/modules";
 
 interface NavBarProps {
   handleShow: () => void;
@@ -31,7 +27,6 @@ const Navbar: React.FC<NavBarProps> = ({ handleShow }) => {
   const [tokenPresent, setTokenPresent] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const navigate = useNavigate();
-  const [showSlider, setShowSlider] = useState(true); 
 
   const resizeHeaderOnScroll = () => {
     setHasSrolled((hasScrolled) => {
@@ -159,41 +154,6 @@ const Navbar: React.FC<NavBarProps> = ({ handleShow }) => {
   };
 
   return (
-    <>
-     {showSlider && (
-        <div className="relative w-full cursor-pointer">
-          {/* Close Button */}
-          <button
-            onClick={() => setShowSlider(false)}
-            className="absolute top-2 right-6 z-20 text-black bg-transparent hover:bg-transparent hover:text-red-500"
-          >
-            ✖
-          </button>
-
-          {/* Swiper Slider */}
-          <Swiper
-  className="w-full h-full"
-  autoplay={{ delay: 3000, disableOnInteraction: false }}
-  loop={true}
-  modules={[Autoplay]}
->
-            {/* Slide 1 */}
-            <SwiperSlide>
-              <div className="flex flex-col justify-center items-center h-full text-center p-6  bg-gray-300">
-                <p className="mt-2 text-lg md:text-xl">Claim up to 5 Anons NFT on purchases above 40$, starting from March 31st, 10:00 am PST
-                </p>
-              </div>
-            </SwiperSlide>
-
-            {/* Slide 2 */}
-            <SwiperSlide>
-              <div className="flex flex-col justify-center items-center h-full text-center p-6  bg-gray-300">
-                <p className="mt-2 text-lg md:text-xl"> 10 % off on Quosha store for all Turtlez NFT holders. Join the discord to claim your coupon code! <a href="https://discord.com/invite/Th9CE68GUU" target="_blank" rel="noopener noreferrer">discord.gg/Th9CE68GUU</a> .</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      )}
     <nav className={navStyles}>
       <div className={` ${styles.container_bottom}`}>
         <Link to="/" className={styles.title}>
@@ -433,7 +393,6 @@ const Navbar: React.FC<NavBarProps> = ({ handleShow }) => {
         </div>
       </div>
     </nav>
-    </>
   );
 };
 
