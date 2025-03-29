@@ -3,7 +3,7 @@ import Web3 from "web3";
 import { ABI } from "./ABI.js";
 import { checkEligibility, nftDrop } from "../../features/order/orderSlice.js";
 import { RootState } from "../../app/store.js";
-import img from "../../images/9-removebg-preview.png";
+import img from "../../images/Nft.png";
 import { useAppSelector, useAppDispatch } from "../../app/hooks.js";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
