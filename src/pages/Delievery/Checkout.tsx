@@ -104,7 +104,7 @@ const Checkout: React.FC = () => {
   //   calculateTotalPrice(subTotalPrice, shippingRate, taxRate).toFixed(2);
 
   const lastPrice = (
-    calculateTotalPrice(subTotalPrice, shippingRate, taxRate)/100
+    calculateTotalPrice(subTotalPrice, shippingRate, taxRate)
   ).toFixed(2);
 
   const connectWallet = async () => {
@@ -568,6 +568,7 @@ const Checkout: React.FC = () => {
           <div className="text-2xl font-bold pt-7 pb-4">
             Choose Payment Mode
           </div>
+          {false && (
           <div className="border p-10 bg-gray-50 shadow">
             <div className="text-2xl font-extrabold flex items-center gap-10 border py-2 px-5 rounded w-max bg-white mx-auto">
               <input
@@ -614,6 +615,7 @@ const Checkout: React.FC = () => {
               </label>
             </div>
           </div>
+          )}
 
           {currentAccount && (
             <div className="data pt-5">
