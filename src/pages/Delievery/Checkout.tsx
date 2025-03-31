@@ -568,8 +568,8 @@ const Checkout: React.FC = () => {
           <div className="text-2xl font-bold pt-7 pb-4">
             Choose Payment Mode
           </div>
-          {false && (
           <div className="border p-10 bg-gray-50 shadow">
+          {false && (
             <div className="text-2xl font-extrabold flex items-center gap-10 border py-2 px-5 rounded w-max bg-white mx-auto">
               <input
                 type="radio"
@@ -590,6 +590,7 @@ const Checkout: React.FC = () => {
                 <div>PayPal</div>
               </label>
             </div>
+          )}
 
             <div className="text-2xl font-extrabold flex items-center gap-10 border mt-5 py-2 px-5 rounded w-max bg-white mx-auto">
               <input
@@ -615,7 +616,7 @@ const Checkout: React.FC = () => {
               </label>
             </div>
           </div>
-          )}
+         
 
           {currentAccount && (
             <div className="data pt-5">
