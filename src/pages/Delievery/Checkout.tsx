@@ -37,18 +37,18 @@ const Checkout: React.FC = () => {
   const { taxRate, shippingRate,} =
   location.state || {};
 
-  // const calculateTotalPrice = (
-  //   subTotalPrice: number,
-  //   shippingRate: number,
-  //   taxRate: number
-  // ) => {
-  //   return (
-  //     subTotalPrice -
-  //     discount +
-  //     (shippingRate || 0) +
-  //     (taxRate * subTotalPrice || 0)
-  //   );
-  // };
+  const calculateTotalPrice = (
+    subTotalPrice: number,
+    shippingRate: number,
+    taxRate: number
+  ) => {
+    return (
+      subTotalPrice -
+      discount +
+      (shippingRate || 0) +
+      (taxRate * subTotalPrice || 0)
+    );
+  };
 
   // useEffect(() => {
   //   window.scrollTo(0, 0);
@@ -103,11 +103,9 @@ const Checkout: React.FC = () => {
   // const lastPrice =
   //   calculateTotalPrice(subTotalPrice, shippingRate, taxRate).toFixed(2);
 
-  // const lastPrice = (
-  //   calculateTotalPrice(subTotalPrice, shippingRate, taxRate)
-  // ).toFixed(2);
-
-  const lastPrice = Number(1);
+  const lastPrice = (
+    calculateTotalPrice(subTotalPrice, shippingRate, taxRate)/100
+  ).toFixed(2);
 
   const connectWallet = async () => {
     try { 
