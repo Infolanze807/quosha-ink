@@ -37,18 +37,18 @@ const Checkout: React.FC = () => {
   const { taxRate, shippingRate,} =
   location.state || {};
 
-  const calculateTotalPrice = (
-    subTotalPrice: number,
-    shippingRate: number,
-    taxRate: number
-  ) => {
-    return (
-      subTotalPrice -
-      discount +
-      (shippingRate || 0) +
-      (taxRate * subTotalPrice || 0)
-    );
-  };
+  // const calculateTotalPrice = (
+  //   subTotalPrice: number,
+  //   shippingRate: number,
+  //   taxRate: number
+  // ) => {
+  //   return (
+  //     subTotalPrice -
+  //     discount +
+  //     (shippingRate || 0) +
+  //     (taxRate * subTotalPrice || 0)
+  //   );
+  // };
 
   // useEffect(() => {
   //   window.scrollTo(0, 0);
