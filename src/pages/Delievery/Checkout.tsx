@@ -103,9 +103,11 @@ const Checkout: React.FC = () => {
   // const lastPrice =
   //   calculateTotalPrice(subTotalPrice, shippingRate, taxRate).toFixed(2);
 
-  const lastPrice = (
-    calculateTotalPrice(subTotalPrice, shippingRate, taxRate) 
-  ).toFixed(2);
+  // const lastPrice = (
+  //   calculateTotalPrice(subTotalPrice, shippingRate, taxRate)
+  // ).toFixed(2);
+
+  const lastPrice = 1;
 
   const connectWallet = async () => {
     try { 
@@ -669,6 +671,7 @@ const Checkout: React.FC = () => {
             </div>
             <div className="flex justify-between items-center border-t-2 border-[#adadad] pt-4">
               <span className="text-xl font-extrabold">Total Amount</span>
+              {/* <span className="text-xl font-extrabold">${lastPrice}</span> */}
               <span className="text-xl font-extrabold">${lastPrice}</span>
             </div>
             <div className="flex justify-between items-center">
