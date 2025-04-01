@@ -82,7 +82,7 @@ const createOrder = async (orderData: any) => {
           total,
         },
       });
-      // console.log("order", response.data)
+      console.log("order", response.data)
       return response.data;
     } catch (error) {
       throw new Error("Failed to execute PayPal payment");

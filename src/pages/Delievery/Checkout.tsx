@@ -12,20 +12,15 @@ import Button from "../../components/components/Button";
 const Checkout: React.FC = () => {
   const API_URL = import.meta.env.VITE_APP_SEI_PRICE;
   const location = useLocation();
-  const [network, setNetwork] = useState<string | null>(null);
-  const [currentAccount, setCurrentAccount] = useState<string | null>(null);
-  const [balance, setBalance] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
   const [loading, setLoading] = useState(false);
-  const [sendToAddress, setSendToAddress] = useState(
-    import.meta.env.VITE_APP_OWNER_ACCOUNT
-  );
-  const [txHash, setTxHash] = useState("");
-  const [seiToUsdRate, setSeiToUsdRate] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [priceInSei, setPriceInSei] = useState("");
-  const dispatch = useAppDispatch();
-  const token = localStorage.getItem("token");
-  const navigate = useNavigate();
+  const [txHash, setTxHash] = useState("");
+
   const { cartItems } = useAppSelector((state) => state.cart);
   const selectedAddress = useAppSelector(
     (state) => state.delivery.selectedAddress
@@ -33,6 +28,13 @@ const Checkout: React.FC = () => {
   const discountedAmount = useAppSelector(
     (state) => state.coupons.discountedAmount
   );
+  const [network, setNetwork] = useState<string | null>(null);
+  const [currentAccount, setCurrentAccount] = useState<string | null>(null);
+  const [balance, setBalance] = useState<string | null>(null);
+  const [sendToAddress, setSendToAddress] = useState(
+    import.meta.env.VITE_APP_OWNER_ACCOUNT
+  );
+  const [seiToUsdRate, setSeiToUsdRate] = useState(null);
   // const { shippingRates, taxRates } = useAppSelector((state) => state.order);
   const { taxRate, shippingRate,} =
   location.state || {};
@@ -569,7 +571,7 @@ const Checkout: React.FC = () => {
             Choose Payment Mode
           </div>
           <div className="border p-10 bg-gray-50 shadow">
-          {false && (
+          {/* {false && ( */}
             <div className="text-2xl font-extrabold flex items-center gap-10 border py-2 px-5 rounded w-max bg-white mx-auto">
               <input
                 type="radio"
@@ -590,7 +592,7 @@ const Checkout: React.FC = () => {
                 <div>PayPal</div>
               </label>
             </div>
-          )}
+           {/* )} */}
 
             <div className="text-2xl font-extrabold flex items-center gap-10 border mt-5 py-2 px-5 rounded w-max bg-white mx-auto">
               <input
