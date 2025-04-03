@@ -56,23 +56,23 @@ const PayPalSuccess: React.FC = () => {
 
       try {
         // Execute PayPal payment (if necessary)
-        await dispatch(executePayment({ total: (data.totalAmount * 10000), paymentId, payerId }));
+        await dispatch(executePayment({ total: (data.totalAmount), paymentId, payerId }));
 
         // Create order using orderData
-        const orderResponse = await dispatch(createOrder(orderData));
+        // const orderResponse = await dispatch(createOrder(orderData));
 
         // console.log("Order Response:", orderResponse);
 
-        if (orderResponse.meta.requestStatus === "fulfilled") {
-          const orderId = orderResponse.payload.id;
-          navigate(`/order-success/${orderId}`);
-          sessionStorage.removeItem("orderData");
-        } else {
-          toast.error("Failed to place order.");
-        }
+        // if (orderResponse.meta.requestStatus === "fulfilled") {
+        //   const orderId = orderResponse.payload.id;
+        //   navigate(`/order-success/${orderId}`);
+        //   sessionStorage.removeItem("orderData");
+        // } else {
+        //   toast.error("Failed to place order.");
+        // }
       } catch (error) {
         toast.error("Failed to create order after payment.");
-        navigate("/");
+        // navigate("/");
       }
     };
 
