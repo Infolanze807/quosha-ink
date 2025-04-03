@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { executePayment, createOrder } from "../../features/order/orderSlice";
+import { executePayment } from "../../features/order/orderSlice";
 import toast from "react-hot-toast";
 
 const PayPalSuccess: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const location = useLocation();
-  const userId = localStorage.getItem("userId");
+  // const userId = localStorage.getItem("userId");
   const { cartItems } = useAppSelector((state) => state.cart);
   const data = JSON.parse(sessionStorage.getItem("orderData") || "{}");
   const isOrderCreated = useRef(false);
@@ -28,29 +28,29 @@ const PayPalSuccess: React.FC = () => {
       if (isOrderCreated.current) return;  // Prevent multiple executions
       isOrderCreated.current = true;
 
-      const orderData = {
-        userId: userId || "",
-        recipient: data.recipient,
-        items: cartItems.map((item) => ({
-          sync_variant_id: item.product.id,
-          quantity: item.quantity,
-          name: item.product.name,
-          productId: item.product.sync_product_id,
-          image: item.product.thumbnail_url,
-          size: item.product.size,
-          price: item.product.price,
-        })),
-        shipping: "STANDARD",
-        subAmount: data.subAmount,
-        discount: data.discount,
-        shippingRate: data.shippingRate,
-        taxRate: data.taxRate,
-        totalAmount: data.totalAmount,
-        method: "PayPal",
-        transactionId: paymentId,
-        USD: data.totalAmount,
-        currency: "USD",
-      };
+      // const orderData = {
+      //   userId: userId || "",
+      //   recipient: data.recipient,
+      //   items: cartItems.map((item) => ({
+      //     sync_variant_id: item.product.id,
+      //     quantity: item.quantity,
+      //     name: item.product.name,
+      //     productId: item.product.sync_product_id,
+      //     image: item.product.thumbnail_url,
+      //     size: item.product.size,
+      //     price: item.product.price,
+      //   })),
+      //   shipping: "STANDARD",
+      //   subAmount: data.subAmount,
+      //   discount: data.discount,
+      //   shippingRate: data.shippingRate,
+      //   taxRate: data.taxRate,
+      //   totalAmount: data.totalAmount,
+      //   method: "PayPal",
+      //   transactionId: paymentId,
+      //   USD: data.totalAmount,
+      //   currency: "USD",
+      // };
 
       // console.log("Order Data:", orderData);
 
