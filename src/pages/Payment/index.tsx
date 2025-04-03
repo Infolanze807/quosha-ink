@@ -56,19 +56,19 @@ const PayPalSuccess: React.FC = () => {
 
       try {
         // Execute PayPal payment (if necessary)
-        const paymentResponse = await dispatch(
+         await dispatch(
           executePayment({ total: data.totalAmount * 100, paymentId, payerId })
-        );
+        ).unwrap()
 
-        if (paymentResponse.meta.requestStatus === "pending") {
-          toast.loading("Processing payment, please wait...");
-        }
+        // if (paymentResponse.meta.requestStatus === "pending") {
+        //   toast.loading("Processing payment, please wait...");
+        // }
     
-        if (paymentResponse.meta.requestStatus === "rejected") {
-          toast.error("Payment execution failed.");
-          navigate("/");
-          return;
-        }
+        // if (paymentResponse.meta.requestStatus === "rejected") {
+        //   toast.error("Payment execution failed.");
+        //   navigate("/");
+        //   return;
+        // }
 
         // Create order using orderData
         const orderResponse = await dispatch(createOrder(orderData));
