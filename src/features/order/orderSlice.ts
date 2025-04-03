@@ -206,9 +206,6 @@ export const executePayment = createAsyncThunk(
   "payment/execute",
   async ({ total, paymentId, payerId }: { total: number; paymentId: string; payerId: string }, thunkAPI) => {
     try {
-      console.log("total", total)
-      console.log("paymentId", paymentId)
-      console.log("payerId", payerId)
       const response = await orderService.executePayment({ total, paymentId, payerId });
       return response;
     } catch (error: any) {
@@ -430,7 +427,6 @@ export const orderSlice = createSlice({
           state.order = action.payload;
           state.status = STATUS.IDLE;
           state.error = null; // Clear error state on success
-          console.log("order status error", state.order, state.status, state.error)
           // toast.success("Order placed successfully!");
         }
       )
@@ -439,7 +435,6 @@ export const orderSlice = createSlice({
         state.isError = true;
         state.status = STATUS.ERROR;
         state.error = action.payload as string; // Store the error message
-        console.log("status error", state.status, state.error)
 
         toast.error("Failed to create order after payment. Please try again.");
       })

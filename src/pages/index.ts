@@ -9,6 +9,7 @@ export { default as OrderPage } from "./Order";
 export { default as VerifyPage } from "./Email Verify";
 export { default as SingleOrder } from "./Order/SingleOrder";
 export { default as OrderSuccess } from "./Order/SuccessOrder";
+export { default as FailedOrder } from "./Order/FailedOrder";
 export { default as PayPalSuccess} from "./Payment/index";
 export { default as NftAirdrop } from "./NftAirDrops/NftAirdrops";
 export { default as AboutUs} from "./About";

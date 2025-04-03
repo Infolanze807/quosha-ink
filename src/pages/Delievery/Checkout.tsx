@@ -106,7 +106,7 @@ const Checkout: React.FC = () => {
   //   calculateTotalPrice(subTotalPrice, shippingRate, taxRate).toFixed(2);
 
   const lastPrice = (
-    calculateTotalPrice(subTotalPrice, shippingRate, taxRate)/100
+    calculateTotalPrice(subTotalPrice, shippingRate, taxRate)
   ).toFixed(2);
 
   const connectWallet = async () => {

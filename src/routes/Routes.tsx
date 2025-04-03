@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { AboutUs, Cart, Catalog, Contact, Home, PayPalSuccess, Privacy, Product, ResetPage, SingleOrder, Terms, VerifyPage } from "../pages";
+import { AboutUs, Cart, Catalog, Contact, FailedOrder, Home, PayPalSuccess, Privacy, Product, ResetPage, SingleOrder, Terms, VerifyPage } from "../pages";
 import LoginPage from "../pages/Login";
 import RegisterPage from "../pages/Register";
 import ForgotPage from "../pages/Forgot";
@@ -70,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: "order-success/:orderId",
         element: <SuccessOrder/>
+      },
+      {
+        path: "failedOrder",
+        element: <FailedOrder/>
       },
       {
         path: "about-us",
